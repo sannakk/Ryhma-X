@@ -1,2 +1,2 @@
-# Ryhma-X
+# RyhmaX
 Leevi Sallantaus ja Sanna Kunnasluoto
