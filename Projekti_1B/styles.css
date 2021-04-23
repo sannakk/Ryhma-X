@@ -1,0 +1,83 @@
+body {
+background-color:rgba(188,188,188,0.3);
+}
+
+h1 {
+  font-weight: bold;
+  font-family: cursive;
+  text-decoration: underline;
+}
+
+#kuvaus {
+  font-style: italic;
+}
+
+
+.center {
+width: 320px;
+height: auto;
+margin: auto;
+border: 1px solid black;
+border-radius: 5px;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+background-color: rgba(200,0,150,0.3);
+}
+
+.help {
+    display:none;
+    font-size:90%;
+}
+
+input:focus + .help {
+    display:inline-block;
+}
+
+input {
+width: 95%;
+height: 15px;
+padding: 2px;
+}
+
+input[type ="number"] {
+  width: 25%;
+  height: 15px;
+  padding:  2px;
+}
+
+
+select {
+width: auto;
+height: auto;
+}
+
+input[type="radio"] {
+width: 15px;
+height: 15px;
+}
+
+input[type="checkbox"] {
+width: 15px;
+height: 15px;
+}
+
+textarea {
+width: 95%;
+height: 100px;
+padding: 2px;
+}
+
+button {
+width: auto;
+height: 30%;
+padding: 10px;
+color:white;
+background-color:black;
+
+}
+
+button:hover {
+  background-color: #716A6B;
+  cursor:pointer;
+}

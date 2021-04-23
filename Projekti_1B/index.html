@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script type="text/javascript" src="script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles.css">
+        <meta charset="utf-8">
+          <title>Kyselylomake</title>
+</head>
+<body>
+    <div class="center">
+      <h1 id="otsikko">Kyselylomake</h1>
+      <p id="kuvaus">Keräämme tietoja 18-25 vuotiailta!</p>
+
+<!-- Nimi, ikä ja sähköposti -->
+      <form action="" id="kyselylomake" method="post">
+      <label for="nimisyotto">Nimi:</label><br>
+      <input type="text" id="nimi" value="" placeholder="Erkki Esimerkki" required pattern="/^[a-zA-Z-äöÄÖ]+([a-zA-Z-äöÄÖ]+)+$/" title="etunimi sukunimi" aria-required="true" aria-describedby="name-format"><br>
+      <span id="joslyhyt" class="help"></span>
+
+
+      <label for="emailsyotto">Sähköposti osoite:</label><br>
+      <input type="email" id="email" value="" placeholder="erkki.esimerkki@gmail.com" required aria-required="true"><br>
+      <div id="sposti"></div>
+
+      <label for="ikasyotto">Ikä:</label><br>
+      <input type="number" id="ika" value="" placeholder="Anna ikäsi" required aria-required="true" aria-required="true" min="18" max="25"><br>
+      <div id="einumero"></div>
+
+
+    <p>Sukupuoli<br>
+      <select id="pudotus" required>
+        <option value="" disabled selected>Valitse:</option>
+        <option value="Mies">Mies</option>
+        <option value="Nainen">Nainen</option>
+        <option value="Muu">En halua määritellä</option>
+        </select></p>
+
+
+    <p>Onko sinulla lapsia?<br>
+      <input type="radio" id="lapsijoo" name="radio" value="" required aria-required="true">
+      <label for="lapsia1">Kyllä</label><br>
+        <input type="radio" id="lapsiei" name="radio" value="">
+        <label for="lapsia2">Ei</label><br></p>
+
+
+    <p>Mitä Tv-ohjelmia näistä katsot?<br>
+      <input type="checkbox" name="check" id="ohj1" value="">
+        <label for="kulku1">Timeless</label><br>
+        <input type="checkbox" name="check" id="ohj2" value="">
+        <label for="kulku2">West World</label><br>
+        <input type="checkbox" name="check" id="ohj3" value="">
+        <label for="kulku3">Lupin</label><br></p>
+
+
+
+
+
+    <div class="ppalaute">
+      <label for="palaute">Palaute:</label><br>
+        <textarea id="palaute" placeholder="Anna meille palautetta..." required aria-required="true"></textarea><br><br>
+      </div>
+
+    <button type="submit" id="laheta" onclick="myFunction()">Lähetä</button><br>
+</form>
+</div>
+
+
+</body>
+</html>
