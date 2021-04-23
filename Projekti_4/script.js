@@ -1,43 +1,46 @@
-// Tein nää eri variablet niinkuin ymmärsin
-var lista = document.getElementsByTagName("li");
-var listaJasen = document.createElement("li");
-tekstiKentta.value = "";
-var teksti = document.getElementById("tekstiKentta").value;
-var t = document.createTextNode(teksti);
+// Nappia kun klikkaa
+  var nappi = document.getElementById("enter");
+  nappi.addEventListener("click",lisaa1);
 
+//Enteriä kun painaa
+  var teksti = document.getElementById("tekstiKentta");
+  teksti.addEventListener("keypress", lisaa2);
 
-//Tää on vaan et se tuo sen tekstikentän pituuden tota lisaa
-//funktiota varten tavallaan
-function kentanPituus()
+var ul = document.querySelector("ul");
+
+function syotonPituus()
 {
-       return tekstiKentta.value.length;
-
-// ja taa tuo listan pituuden. siit en vielä tiiä mihin sitä tarvii
-function listanPituus()
-{
-        return lista.length;
+	return teksti.value.length;
 }
 
-function lisaa() {
-
-
-  if (kentanPituus() > 0) {
-    teeListaJasen();
-  }
-  if (kentanPituus() > 0 && event.which == 13) {
-    teeListaJasen();
+function teeLi() {
+// Tekee li elementin
+var li = document.createElement("li");
+  // Katsotaan onko syötetty jotain
+  if(teksti.value != '')
+  {
+    //Lisää tekstin joka on laatikossa
+    li.appendChild(document.createTextNode(teksti.value));
+  	ul.appendChild(li);
+  	teksti.value = "";
   }
 }
 
-function teeListaJasen() {
-  document.getElementById("enter").addEventListener("click", function() {
-    document.getElementById("tehtavalista").appendChild(teksti);
+  function lisaa1()
+  {
+    //Jos on syötetty jotain suoritetaan TeeLi()
+  	if (syotonPituus() > 0) {
+  		TeeLi();
+  	}
   }
-)};
 
-function poista(){
+  function lisaa2(event)
+  {
+    //Sama mutta enterin painalluksen jälkeen
+  	if (syotonPituus() > 0 && event.keyCode ===13) {
+  		TeeLi();
+  	}
+  }
 
-
-
-
-}
+  function poista(){
+  }
