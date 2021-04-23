@@ -6,7 +6,6 @@ var teksti = document.getElementById("tekstiKentta").value;
 var t = document.createTextNode(teksti);
 
 
-
 //Tää on vaan et se tuo sen tekstikentän pituuden tota lisaa
 //funktiota varten tavallaan
 function kentanPituus()
@@ -18,8 +17,6 @@ function listanPituus()
 {
         return lista.length;
 }
-
-
 
 function lisaa() {
 
