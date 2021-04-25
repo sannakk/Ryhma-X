@@ -26,19 +26,17 @@ var li = document.createElement("li");
   }
 }
 
-  function lisaa1()
-  {
+  function lisaa1() {
     //Jos on syötetty jotain suoritetaan TeeLi()
   	if (syotonPituus() > 0) {
-  		TeeLi();
+  		teeLi();
   	}
   }
 
-  function lisaa2(event)
-  {
+  function lisaa2(event) {
     //Sama mutta enterin painalluksen jälkeen
-  	if (syotonPituus() > 0 && event.keyCode ===13) {
-  		TeeLi();
+  	if (syotonPituus() > 0 && event.which === 13) {
+  		teeLi();
   	}
   }
 
