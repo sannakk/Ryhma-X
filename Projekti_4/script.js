@@ -23,8 +23,22 @@ var li = document.createElement("li");
     li.appendChild(document.createTextNode(teksti.value));
   	ul.appendChild(li);
   	teksti.value = "";
+
+    var nappi2 = document.createElement("button");
+    var x = document.createTextNode("x");
+      nappi2.classname = "sulje";
+      nappi2.appendChild(x);
+      li.appendChild(nappi2);
+      
+
+      function poista()
+        {
+      		li.classList.add("delete");
+      	}
   }
 }
+
+
 
   function lisaa1() {
     //Jos on syötetty jotain suoritetaan TeeLi()
@@ -38,7 +52,4 @@ var li = document.createElement("li");
   	if (syotonPituus() > 0 && event.which === 13) {
   		teeLi();
   	}
-  }
-
-  function poista(){
   }
