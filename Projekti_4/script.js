@@ -26,6 +26,8 @@ var li = document.createElement("li");
   	ul.appendChild(li);
   	teksti.value = "";
 
+
+
 //Tekee napin jossa x sen edellä luotuun laatikkoon
     var nappi2 = document.createElement("button");
     var x = document.createTextNode("x");
@@ -35,7 +37,10 @@ var li = document.createElement("li");
       //Tällä funktiolla se poistaa luodun laatikon
       nappi2.onclick = function() {
         li.remove(this);
-
+      }
+      //Tällä funktiolla se vaihtaa väriä
+      li.onclick = function() {
+        li.classList.toggle("tehty");
       }
   }
 }
