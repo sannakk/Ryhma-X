@@ -30,7 +30,7 @@ var li = document.createElement("li");
 
 //Tekee napin jossa x sen edellä luotuun laatikkoon
     var nappi2 = document.createElement("button");
-    var x = document.createTextNode("x");
+    var x = document.createTextNode("X");
       nappi2.classname = "sulje";
       nappi2.appendChild(x);
       li.appendChild(nappi2);

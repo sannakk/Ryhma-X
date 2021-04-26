@@ -15,8 +15,6 @@ margin-bottom: 40px;
   width: 60%;
   margin: auto;
   height: auto;
-  border: 3px solid #66ff33;
-  border-radius: 3px;
   padding: 40px;
 }
 
@@ -28,8 +26,7 @@ input {
   border: 2px solid #ffffff;
   border-radius: 3px;
   font-family: arial;
-  font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
   color: #333333;
 }
 
@@ -84,27 +81,32 @@ li {
   margin-left: 15%;
   margin-bottom: 5px;
   height: 30px;
-  padding: 5px;
-  text-align: left;
-  border: 4px solid #ff6600;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 0px solid #ff6600;
   border-radius: 2px;
   font-family: arial;
-  vertical-align: middle;
   font-size: 15px;
   color: #333333;
 }
 
+ul {
+  text-align: left;
+}
+
 .tehty {
 background-color: #66ff33;
-color: #333333;
+color: #208000;
+text-decoration: line-through;
 }
 
 li > button {
   float: right;
   width: 30px;
+  padding-bottom: 10px;
+  padding-right: 10px;
   height: 30px;
-  text-align: center;
-  background-color: #ff6600;
+  background-color: transparent;
   border: 0px;
   color: #333333;
   font-weight: bold;
