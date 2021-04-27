@@ -35,16 +35,19 @@
 #fourBody {
   background-color: #378B4B;
   font-family: Helvetica, sans-serif;
+  display:flex;
 }
 
 #fourSixBody {
   background-color: #FFE00D;
   font-family: Helvetica, sans-serif;
+  display:flex;
 }
 
 #sixBody {
   background-color: #0065E9;
   font-family: Helvetica, sans-serif;
+  display:flex;
 }
 
 #otsikko1 {
@@ -59,5 +62,48 @@
   text-align:center;
   font-style: italic;
   font-size: 120%;
+}
+
+.muistipeli {
+  width: 700px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.kortit {
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+
+}
+
+.etu,
+.taka {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  position: absolute;
+  border-radius: 5px;
+  background: #1C7CCC;
+}
+
+.muistipeli6 {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.kortit6 {
+  width: calc(15% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 
 }
