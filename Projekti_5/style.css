@@ -1,0 +1,59 @@
+.napit button {
+  background-color: #E1FA00;
+  border: 1px solid black;
+  color: black;
+  font-weight:bold;
+  font-size: 150%;
+  text-shadow: 2px 2px #888888;
+  margin-bottom: 5%;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px 24px;
+  cursor: pointer;
+  width: 20%;
+  display: block;
+  border-radius: 30px;
+  box-shadow: 3px 4px 0px 0px #444444;
+}
+
+.napit button:hover {
+  background-color: black;
+  color: white;
+}
+
+.napit button:active {
+  position:relative;
+  top: 2px;
+}
+
+
+#indexBody {
+  background-color: #DC0B7B;
+  font-family: Helvetica, sans-serif;
+}
+
+#fourBody {
+  background-color: #378B4B;
+  font-family: Helvetica, sans-serif;
+}
+
+#fourSixBody {
+  background-color: #FFE00D;
+  font-family: Helvetica, sans-serif;
+}
+
+#sixBody {
+  background-color: #0065E9;
+  font-family: Helvetica, sans-serif;
+}
+
+#otsikko1 {
+  text-align:center;
+  text-shadow: 2px 2px #444444;
+  font-size: 300%;
+}
+
+#otsikko2 {
+  text-align:center;
+  font-style: italic;
+}
