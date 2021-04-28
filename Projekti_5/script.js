@@ -1,11 +1,30 @@
 var kortit = document.querySelectorAll('.kortti, .kortti6'); //Poimii kaikki class "kortti" ja "kortti6" elementit
-var laskuri = 0;
-console.log(kortit);
+var kaannetty = false;
+var eka, toka;
+//var napautukset = 0;
+//var aikaa = setInterval(ajanLasku, 1000);
+//var sekunnit = 0;
+//console.log(kortit);
+
+/*function ajanLasku(){
+  sekunnit++;
+  var sek = sekunnit -
+  var min =
+  //document.getElementById("aika").innerHTML = sekunnit;
+console.log(sekunnit);
+}*/
 
 //Kortin kääntäminen
 function kaanna(){
-  this.classList.toggle('kaanto'); //Tapahtuu kaanto-classiin määritellyt asiat
-console.log('click');
+  this.classList.add('kaanto'); //Tapahtuu kaanto-classiin määritellyt asiat
+  if (!kaannetty){
+    kaannetty = true;
+    eka = this;
+  }else{
+    kaannetty = false;
+    toka = this;
+    console.log({kaannetty, toka});
+  }
 }
 
 //Kutsuu jokaista elementtiä erikseen ja lisää kaikille "tapahtuman" eli klikatessa alkaa funktio kaanna
