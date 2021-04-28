@@ -80,6 +80,7 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   transform-style: preserve-3d;
   transition: transform .5s;
+
 }
 
 .muistipeli6 {
@@ -98,6 +99,7 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   transform-style: preserve-3d;
   transition: transform .5s;
+
 
 }
 
@@ -167,4 +169,34 @@ text-shadow: 2px 2px #666666;
 font-family: Georgia, serif;
 font-weight: bold;
 font-size:250%;
+}
+
+.alkuruutuun {
+float:left;
+margin-left:15%;
+background-color:black;
+color:white;
+font-family: Georgia, serif;
+font-size:120%;
+font-weight: bold;
+width:25%;
+}
+
+.playAgain {
+float:right;
+margin-right:15%;
+background-color:black;
+color:white;
+font-family: Georgia, serif;
+font-weight: bold;
+font-size:120%;
+width:25%;
+
+}
+
+.playAgain:hover,
+.alkuruutuun:hover {
+  background-color: #DC0B7B;
+  color: black;
+  cursor:pointer;
 }
