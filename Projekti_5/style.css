@@ -121,8 +121,6 @@
 }
 
 .column1 {
-  float: left;
-  text-align:center;
   width: 10%;
   padding: 10px;
 }
@@ -130,11 +128,10 @@
 .column2 {
   width: 70%;
   padding: 10px;
+  margin:auto;
 }
 
 .column3 {
-  float: right;
-  text-align:center;
   width: 10%;
   padding: 10px;
 }
@@ -153,7 +150,7 @@ text-shadow: 2px 2px #666666;
 font-family: Georgia, serif;
 font-weight: bold;
 margin-left:5%;
-font-size:300%;
+font-size:250%;
 }
 
 .ajanKaytto {
@@ -162,11 +159,12 @@ font-family: Georgia, serif;
 font-weight: bold;
 text-decoration: underline;
 font-size:150%;
+float:right;
 }
 
 .aika {
 text-shadow: 2px 2px #666666;
 font-family: Georgia, serif;
 font-weight: bold;
-font-size:300%;
+font-size:250%;
 }
