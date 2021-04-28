@@ -116,7 +116,7 @@
   transform: rotateY(180deg);
 }
 
-.kaanto {
+.kortti.kaanto, .kortti6.kaanto {
   transform: rotateY(180deg);
 }
 
