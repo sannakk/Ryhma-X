@@ -80,7 +80,24 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   transform-style: preserve-3d;
   transition: transform .5s;
+}
 
+.muistipeli6 {
+  width: 800px;
+  height: 500px;
+  margin-left:10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.kortti6 {
+  width: calc(15% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform-style: preserve-3d;
+  transition: transform .5s;
 
 }
 
@@ -99,25 +116,6 @@
   transform: rotateY(180deg);
 }
 
-.muistipeli6 {
-  width: 800px;
-  height: 500px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.kortti6 {
-  width: calc(15% - 10px);
-  height: calc(25% - 10px);
-  margin: 5px;
-  position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-  transform-style: preserve-3d;
-  transition: transform .5s;
-
-}
-
 .kaanto {
   transform: rotateY(180deg);
 }
@@ -130,7 +128,6 @@
 }
 
 .column2 {
-
   width: 70%;
   padding: 10px;
 }
@@ -140,4 +137,36 @@
   text-align:center;
   width: 10%;
   padding: 10px;
+}
+
+.klikkaukset {
+text-shadow: 2px 2px #666666;
+font-family: Georgia, serif;
+font-weight: bold;
+margin-left:5%;
+text-decoration: underline;
+font-size:150%;
+}
+
+.clicks {
+text-shadow: 2px 2px #666666;
+font-family: Georgia, serif;
+font-weight: bold;
+margin-left:5%;
+font-size:300%;
+}
+
+.ajanKaytto {
+text-shadow: 2px 2px #666666;
+font-family: Georgia, serif;
+font-weight: bold;
+text-decoration: underline;
+font-size:150%;
+}
+
+.aika {
+text-shadow: 2px 2px #666666;
+font-family: Georgia, serif;
+font-weight: bold;
+font-size:300%;
 }
