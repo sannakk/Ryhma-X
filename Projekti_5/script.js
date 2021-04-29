@@ -2,18 +2,15 @@ var kortit = document.querySelectorAll('.kortti, .kortti6'); //Poimii kaikki cla
 var kaannetty = false; // Kortin kääntö
 var lukitus = false; // Lukitus että ei tapahdu mtn ennen kun kortit on kääntynyt takaisin tai pari
 var ekaKortti, tokaKortti;
-//var napautukset = 0;
-//var aikaa = setInterval(ajanLasku, 1000);
-//var sekunnit = 0;
+var klik = 0;
 
+var aika = document.getElementById('ajanKaytto');
+var sekunnit = 0;
 
-/*function ajanLasku(){
-  sekunnit++;
-  var sek =
-  var min =
-  //document.getElementById("aika").innerHTML = ;
-console.log(sekunnit);
-}*/
+// Laskee aikaa
+var lasku = setInterval(function(){
+  aika.innerHTML = sekunnit++; // Ei näy html vielä...
+}, 1000);
 
 // Kortin kääntäminen
 function kaanna(){
@@ -26,9 +23,12 @@ function kaanna(){
     return;
   }
     tokaKortti = this;
-
     onkoParit(); // Kutsuu onkoParit funktiota
+    klik++;
+    console.log(klik); // Klikkaukset näkyy logissa, mutta ei HTML vielä..
+//document.getElementById('clicks').value.innerHTML= klik;
   }
+
 
 // Onko kortit pari
   function onkoParit(){
