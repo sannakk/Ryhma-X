@@ -26,6 +26,12 @@
   top: 2px;
 }
 
+p {
+  text-align:center;
+  font-family: Helvetica, sans-serif;
+
+}
+
 
 #indexBody {
   background-color: #DC0B7B;
@@ -147,7 +153,7 @@ text-decoration: underline;
 font-size:150%;
 }
 
-.clicks {
+#clicks {
 text-shadow: 2px 2px #666666;
 font-family: Georgia, serif;
 font-weight: bold;
@@ -164,11 +170,12 @@ font-size:150%;
 float:right;
 }
 
-.aika {
+#aika {
 text-shadow: 2px 2px #666666;
 font-family: Georgia, serif;
 font-weight: bold;
 font-size:250%;
+margin-left:50%;
 }
 
 .alkuruutuun {
