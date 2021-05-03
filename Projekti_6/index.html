@@ -7,7 +7,7 @@
 <title>Lomake</title>
 </head>
 <body>
-<form action="/index.html">
+<form action="">
   <label for="etunimi">Etunimi:</label><br>
   <input type="text" id="etunimi" value=""><br>
 
@@ -27,8 +27,9 @@
   <input type="tel" id="puh" value=""><br>
 
   <label for="email">Sähköpostiosoite:</label><br>
-  <input type="email" id="email" value=""><br>
-  <input type="button" onclick="lisaa()">
+  <input type="email" id="email" value=""><br><br>
+  <button type="button" id="syota" onclick="lisaa()">Syötä tiedot</button>
+  <button type="button" id="listaa" onclick="nayta()">Näytä tiedot</button>
 </form>
 <br>
 <p>Tiedot:</p>
