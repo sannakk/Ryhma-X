@@ -10,7 +10,7 @@ var minuutit = 0;
 
 // Laskee aikaa
 var lasku = setInterval(function(){
-  aika.innerHTML = sekunnit++; // Ei näy html vielä...
+  aika.innerHTML = sekunnit++;
 }, 1000);
 
 // Kortin kääntäminen
@@ -26,9 +26,7 @@ function kaanna(){
     tokaKortti = this;
     onkoParit(); // Kutsuu onkoParit funktiota
     document.getElementById('clicks').innerHTML= klik;
-    klik++;
-    console.log(klik); // Klikkaukset näkyy logissa, mutta ei HTML vielä..
-
+    klik++; // Lisääntyy aina tokan kortin klikkauksen jälkeen
   }
 
 
