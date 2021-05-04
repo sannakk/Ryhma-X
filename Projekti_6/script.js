@@ -30,7 +30,7 @@ function lisaa()
 //tiedot menevät piiloon
 function hae()
 {
-  
+
     const nimi = localStorage.getItem("etunimi");
     const snimi = localStorage.getItem("sukunimi");
     const oso = localStorage.getItem("osoite");
@@ -48,7 +48,7 @@ function hae()
      document.getElementById('email').value = "";
      setTimeout(function(){ tiedot.innerHTML = ""; }, 10000);
 
-}
+
 
 }
 
