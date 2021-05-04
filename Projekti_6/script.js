@@ -1,4 +1,5 @@
-function lisaa() {
+function lisaa()
+{
 
 //haen ruutujen id:llä kyseisten tietojen valuen
   const nimi = document.getElementById("etunimi").value;
@@ -12,7 +13,8 @@ function lisaa() {
 
 //Jos kaikki ruudut ovat täytetty ohjelma asettaa niiden arvot
 // local Storageen ja sen jälkeen käynnistyy hae() funktio
-  if(nimi && snimi && oso && post && paikka && nro && sposti) {
+  if(nimi && snimi && oso && post && paikka && nro && sposti)
+{
     localStorage.setItem("etunimi", nimi);
     localStorage.setItem("sukunimi", snimi);
     localStorage.setItem("osoite", oso);
@@ -26,7 +28,8 @@ function lisaa() {
 //Funktio hakee localstoragesta sinne tallennetut Tiedot
 //ja näyttää ne sille luodussa kentässä hetken, jonka jälkeen
 //tiedot menevät piiloon
-function hae() {
+function hae()
+{
     const nimi = localStorage.getItem("etunimi");
     const snimi = localStorage.getItem("sukunimi");
     const oso = localStorage.getItem("osoite");
@@ -54,10 +57,12 @@ console.log(nro);
 console.log(sposti);
 }
 
-function nayta() {
+function nayta()
+{
 
 }
 
-function poista() {
+function poista()
+{
 
 }
