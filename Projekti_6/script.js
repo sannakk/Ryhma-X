@@ -30,6 +30,7 @@ function lisaa()
 //tiedot menevät piiloon
 function hae()
 {
+  
     const nimi = localStorage.getItem("etunimi");
     const snimi = localStorage.getItem("sukunimi");
     const oso = localStorage.getItem("osoite");
@@ -37,7 +38,7 @@ function hae()
     const paikka = localStorage.getItem("ppaikka");
     const nro = localStorage.getItem("puh");
     const sposti = localStorage.getItem("email");
-     document.getElementById("tiedot").innerHTML = nimi + " " + snimi + " " + oso + " " + post + " " + paikka + " " + nro + " " + sposti + " " + "&emsp;<button type='button' id='poista'" + " onclick='poista(this)'>Poista tieto</button>"+ "<br/>";
+     document.getElementById("tiedot").innerHTML = nimi + " " + snimi + "<br>" + oso + "<br>" + post + " " + paikka + "<br>" + nro + "<br>" + sposti + " " + "&emsp;<button type='button' id='poista'" + " onclick='poista(this)'>Poista tieto</button>"+ "<br>";
      document.getElementById('etunimi').value = "";
      document.getElementById('sukunimi').value = "";
      document.getElementById('osoite').value = "";
@@ -45,16 +46,10 @@ function hae()
      document.getElementById('ppaikka').value = "";
      document.getElementById('puh').value = "";
      document.getElementById('email').value = "";
-     setTimeout(function(){ tiedot.innerHTML = ""; }, 5000);
+     setTimeout(function(){ tiedot.innerHTML = ""; }, 10000);
 
+}
 
-console.log(nimi);
-console.log(snimi);
-console.log(oso);
-console.log(post);
-console.log(paikka);
-console.log(nro);
-console.log(sposti);
 }
 
 function nayta()
