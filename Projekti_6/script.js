@@ -47,17 +47,12 @@ function hae()
      document.getElementById('puh').value = "";
      document.getElementById('email').value = "";
      setTimeout(function(){ tiedot.innerHTML = ""; }, 10000);
-
-
-
 }
 
-function nayta()
+//Funktio poistaa kyseessä olevan boxin jossa on täytetyt tiedot
+function poista(boxi)
 {
-
-}
-
-function poista()
-{
-
+const tama = boxi.id;
+localStorage.removeItem(tama);
+location.reload();
 }
