@@ -1,36 +1,40 @@
-const nimi = document.getElementById("etunimi");
-var snimi = document.getElementById("sukunimi");
-var oso = document.getElementById("osoite");
-var post = document.getElementById("postinro");
-var paikka = document.getElementById("ppaikka");
-var nro = document.getElementById("puh");
-var sposti = document.getElementById("email");
-var tiedot = document.getElementById("tiedot");
-
-
-
 function lisaa() {
-  if(nimi && snimi && oso && post && paikka && nro && sposti) {
-    localStorage.setItem("etunimi:", nimi);
-    localStorage.setItem("sukunimi:", snimi);
-    localStorage.setItem("osoite:", oso);
-    localStorage.setItem("postinumero:", post);
-    localStorage.setItem("postitoimipaikka:", paikka);
-    localStorage.setItem("puhelinnumero:", nro);
-    localStorage.setItem("sähköposti:", sposti);
-}
 
-for(let i = 0; i < localStorage.length; i++)
-{
-    const nimi = localStorage.key(i);
-    localStorage.getItem(nimi);
-    localStorage.getItem(snimi);
-    localStorage.getItem(oso);
-    localStorage.getItem(post);
-    localStorage.getItem(paikka);
-    localStorage.getItem(nro);
-    localStorage.getItem(sposti);
-     document.getElementById("tiedot").innerHTML = nimi + snimi + oso + post + paikka + nro + sposti + "&emsp;<button type='button' id=" + " onclick='poista(this)'>Poista tieto</button>"+ "<br/>";
+//haen ruutujen id:llä kyseisten tietojen valuen
+  const nimi = document.getElementById("etunimi").value;
+  const snimi = document.getElementById("sukunimi").value;
+  const oso = document.getElementById("osoite").value;
+  const post = document.getElementById("postinro").value;
+  const paikka = document.getElementById("ppaikka").value;
+  const nro = document.getElementById("puh").value;
+  const sposti = document.getElementById("email").value;
+  const tiedot = document.getElementById("tiedot");
+
+//Jos kaikki ruudut ovat täytetty ohjelma asettaa niiden arvot
+// local Storageen ja sen jälkeen käynnistyy hae() funktio
+  if(nimi && snimi && oso && post && paikka && nro && sposti) {
+    localStorage.setItem("etunimi", nimi);
+    localStorage.setItem("sukunimi", snimi);
+    localStorage.setItem("osoite", oso);
+    localStorage.setItem("postinro", post);
+    localStorage.setItem("ppaikka", paikka);
+    localStorage.setItem("puh", nro);
+    localStorage.setItem("email", sposti);
+    hae();
+}
+}
+//Funktio hakee localstoragesta sinne tallennetut Tiedot
+//ja näyttää ne sille luodussa kentässä hetken, jonka jälkeen
+//tiedot menevät piiloon
+function hae() {
+    const nimi = localStorage.getItem("etunimi");
+    const snimi = localStorage.getItem("sukunimi");
+    const oso = localStorage.getItem("osoite");
+    const post = localStorage.getItem("postinro");
+    const paikka = localStorage.getItem("ppaikka");
+    const nro = localStorage.getItem("puh");
+    const sposti = localStorage.getItem("email");
+     document.getElementById("tiedot").innerHTML = nimi + " " + snimi + " " + oso + " " + post + " " + paikka + " " + nro + " " + sposti + " " + "&emsp;<button type='button' id='poista'" + " onclick='poista(this)'>Poista tieto</button>"+ "<br/>";
      document.getElementById('etunimi').value = "";
      document.getElementById('sukunimi').value = "";
      document.getElementById('osoite').value = "";
@@ -42,8 +46,14 @@ for(let i = 0; i < localStorage.length; i++)
 
 
 console.log(nimi);
+console.log(snimi);
+console.log(oso);
+console.log(post);
+console.log(paikka);
+console.log(nro);
+console.log(sposti);
 }
-}
+
 function nayta() {
 
 }
