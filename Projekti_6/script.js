@@ -54,6 +54,7 @@ else if(sposti)
 //tiedot menevät piiloon
 function hae()
 {
+
     const nimi = localStorage.getItem("etunimi");
     const snimi = localStorage.getItem("sukunimi");
     const oso = localStorage.getItem("osoite");
@@ -62,12 +63,12 @@ function hae()
     const nro = localStorage.getItem("puh");
     const sposti = localStorage.getItem("email");
      document.getElementById("tiedot").innerHTML = nimi + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>" + "<br>" +
-     snimi + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>" + "<br>" +
-     oso + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>" + "<br>" +
-     post + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>" + "<br>" +
-     paikka + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>" + "<br>" +
-     nro + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>" + "<br>" +
-     sposti + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>"+ "<br>";
+     snimi + " " + "<button type='button' id='poista' onclick='remove2(this)'>Poista tieto</button>" + "<br>" +
+     oso + " " + "<button type='button' id='poista' onclick='remove3(this)'>Poista tieto</button>" + "<br>" +
+     post + " " + "<button type='button' id='poista' onclick='remove4(this)'>Poista tieto</button>" + "<br>" +
+     paikka + " " + "<button type='button' id='poista' onclick='remove5(this)'>Poista tieto</button>" + "<br>" +
+     nro + " " + "<button type='button' id='poista' onclick='remove6(this)'>Poista tieto</button>" + "<br>" +
+     sposti + " " + "<button type='button' id='poista' onclick='remove7(this)'>Poista tieto</button>"+ "<br>";
      document.getElementById('etunimi').value = "";
      document.getElementById('sukunimi').value = "";
      document.getElementById('osoite').value = "";
@@ -81,6 +82,36 @@ function hae()
 //Funktio poistaa kyseessä olevan boxin jossa on täytetyt tiedot
 function remove(tama)
 {
-localStorage.removeItem(tama.id);
+localStorage.removeItem("etunimi");
+location.reload();
+}
+function remove2(tama)
+{
+localStorage.removeItem("sukunimi");
+location.reload();
+}
+function remove3(tama)
+{
+localStorage.removeItem("osoite");
+location.reload();
+}
+function remove4(tama)
+{
+localStorage.removeItem("postinro");
+location.reload();
+}
+function remove5(tama)
+{
+localStorage.removeItem("ppaikka");
+location.reload();
+}
+function remove6(tama)
+{
+localStorage.removeItem("puh");
+location.reload();
+}
+function remove7(tama)
+{
+localStorage.removeItem("email");
 location.reload();
 }
