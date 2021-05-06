@@ -18,32 +18,32 @@ function lisaa()
     localStorage.setItem("etunimi", nimi);
     hae();
 }
-else if(snimi)
+if(snimi)
 {
     localStorage.setItem("sukunimi", snimi);
     hae();
 }
-else if(oso)
+if(oso)
 {
     localStorage.setItem("osoite", oso);
     hae();
 }
-else if(post)
+if(post)
 {
     localStorage.setItem("postinro", post);
     hae();
 }
-else if(paikka)
+if(paikka)
 {
     localStorage.setItem("ppaikka", paikka);
     hae();
 }
-else if(nro)
+if(nro)
 {
     localStorage.setItem("puh", nro);
     hae();
 }
-else if(sposti)
+if(sposti)
 {
     localStorage.setItem("email", sposti);
     hae();
@@ -62,7 +62,7 @@ function hae()
     const paikka = localStorage.getItem("ppaikka");
     const nro = localStorage.getItem("puh");
     const sposti = localStorage.getItem("email");
-     document.getElementById("tiedot").innerHTML = nimi + " " + "<button type='button' id='poista' onclick='remove(this)'>Poista tieto</button>" + "<br>" +
+     document.getElementById("tiedot").innerHTML = nimi + " " + "<button type='button' id='poista' onclick='poista(this)'>Poista tieto</button>" + "<br>" +
      snimi + " " + "<button type='button' id='poista' onclick='remove2(this)'>Poista tieto</button>" + "<br>" +
      oso + " " + "<button type='button' id='poista' onclick='remove3(this)'>Poista tieto</button>" + "<br>" +
      post + " " + "<button type='button' id='poista' onclick='remove4(this)'>Poista tieto</button>" + "<br>" +
@@ -80,9 +80,12 @@ function hae()
 }
 
 //Funktio poistaa kyseessä olevan boxin jossa on täytetyt tiedot
-function remove(tama)
+function poista(tama)
 {
 localStorage.removeItem("etunimi");
+if (null) {
+  this.classList.add("poisto");
+}
 location.reload();
 }
 function remove2(tama)
