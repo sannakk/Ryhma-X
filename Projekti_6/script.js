@@ -83,9 +83,6 @@ function hae()
 function poista(tama)
 {
 localStorage.removeItem("etunimi");
-if (null) {
-  this.classList.add("poisto");
-}
 location.reload();
 }
 function remove2(tama)
