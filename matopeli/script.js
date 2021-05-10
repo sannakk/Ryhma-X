@@ -1,21 +1,28 @@
-const board_border='yellow';
-const board_background='black';
-const snake_col='red';
-const snake_border='lightblue';
+//Aloitetaan määrittelemällä seka pelialustan, että madon värit
+const maailmanReuna='yellow';
+const maailmanVari='black';
+const matoVari='red';
+const matoReuna='lightblue';
+
+//Luodaan mato haluttuun sijaintiin pelialustalla mistä,
+//se lähtee myös liikkeelle
+let mato = [{x: 200, y: 200}, {x: 190, y: 200}, {x: 180, y: 200}, {x: 170, y: 200}, {x: 160, y: 200},];
 
 
-let snake = [{x: 200, y: 200}, {x: 190, y: 200}, {x: 180, y: 200}, {x: 170, y: 200}, {x: 160, y: 200},];
-
-let score = 0;
+let tulos = 0;
 let changing_direction = false;
 let food_x;
 let food_y;
-let dx = 20;
+let dx = 10;
 let dy = 0;
 
-const snakeboard = document.getElementById('snakeboard');
-const snakeboard_ctx = snakeboard.getContext('2d');
+//const matoMaailma liitetään html:ssä luodun canvasin id:hen
+const matoMaailma = document.getElementById('matoMaailma');
+//Määritetään kaksiulotteiseksi
+const matoMaailma_ctx = matoMaailma.getContext('2d');
 
+//kaiken luomisen jälkeen käynnistetään pääfunktio sekä
+//madonruoan luomis funktio jolla saadaan ruoka random kohtaan
 main();
 gen_food();
 
@@ -27,45 +34,45 @@ function main(){
   setTimeout(function onTick() {
   clear_board();
   drawFood();
-  move_snake();
-  drawSnake();
+  liikuMato();
+  piirraMato();
   main();
 }, 100)
 }
 
 function clear_board(){
-  snakeboard_ctx.fillStyle = board_background;
-  snakeboard_ctx.strokestyle = board_border;
-  snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
-  snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
+  matoMaailma_ctx.fillStyle = maailmanVari;
+  matoMaailma_ctx.strokestyle = maailmanReuna;
+  matoMaailma_ctx.fillRect(0, 0, matoMaailma.width, matoMaailma.height);
+  matoMaailma_ctx.strokeRect(0, 0, matoMaailma.width, matoMaailma.height);
 }
 
-function drawSnake(){
-  snake.forEach(drawSnakePart)
+function piirraMato(){
+  mato.forEach(piirraMadonOsa)
 }
 
 function drawFood(){
-  snakeboard_ctx.fillStyle ='red';
-  snakeboard_ctx.strokestyle = 'red';
-  snakeboard_ctx.fillRect(food_x, food_y, 20, 20);
-  snakeboard_ctx.strokeRect(food_x, food_y, 20, 20);
+  matoMaailma_ctx.fillStyle ='red';
+  matoMaailma_ctx.strokestyle = 'red';
+  matoMaailma_ctx.fillRect(food_x, food_y, 10, 10);
+  matoMaailma_ctx.strokeRect(food_x, food_y, 10, 10);
 }
 
-function drawSnakePart(snakePart){
-  snakeboard_ctx.fillStyle  = snake_col;
-  snakeboard_ctx.strokestyle = snake_border;
-  snakeboard_ctx.fillRect(snakePart.x, snakePart.y, 20, 20);
-  snakeboard_ctx.strokeRect(snakePart.x, snakePart.y, 20, 20);
+function piirraMadonOsa(madonOsa){
+  matoMaailma_ctx.fillStyle  = matoVari;
+  matoMaailma_ctx.strokestyle = matoReuna;
+  matoMaailma_ctx.fillRect(madonOsa.x, madonOsa.y, 10, 10);
+  matoMaailma_ctx.strokeRect(madonOsa.x, madonOsa.y, 10, 10);
 }
 
 function has_game_ended(){
-  for (let i = 4; i < snake.length; i++){
-    if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true
+  for (let i = 4; i < mato.length; i++){
+    if (mato[i].x === mato[0].x && mato[i].y === mato[0].y) return true
   }
-  const hitLeftWall = snake[0].x < 0;
-  const hitRightWall = snake[0].x > snakeboard.width - 10;
-  const hitTopWall = snake[0].y < 0;
-  const hitBottomWall = snake[0].y > snakeboard.height - 10;
+  const hitLeftWall = mato[0].x < 0;
+  const hitRightWall = mato[0].x > matoMaailma.width - 10;
+  const hitTopWall = mato[0].y < 0;
+  const hitBottomWall = mato[0].y > matoMaailma.height - 10;
   if (hitLeftWall || hitRightWall || hitTopWall || hitBottomWall){
     document.getElementById('gameover').innerHTML = "Game over!";}
   return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
@@ -76,11 +83,11 @@ function random_food(min, max){
 }
 
 function gen_food(){
-  food_x = random_food(0, snakeboard.width - 10);
-  food_y = random_food(0, snakeboard.height - 10);
-  snake.forEach(function has_snake_eaten_food(part){
-    const has_eaten = part.x == food_x && part.y == food_y;
-    if (has_eaten) gen_food();
+  food_x = random_food(0, matoMaailma.width - 10);
+  food_y = random_food(0, matoMaailma.height - 10);
+  mato.forEach(function onkoMatoSyonyt(part){
+    const onSyonyt = part.x == food_x && part.y == food_y;
+    if (onSyonyt) gen_food();
   });
 }
 
@@ -116,15 +123,18 @@ changing_direction = true;
     }
 }
 
-function move_snake() {
-  const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-  snake.unshift(head);
-  const has_eaten_food = snake[0].x === food_x && snake[0].y === food_y;
-  if(has_eaten_food){
-    score += 9;
-    document.getElementById('score').innerHTML = score;
+function liikuMato() {
+  const head = {x: mato[0].x + dx, y: mato[0].y + dy};
+  mato.unshift(head);
+  //Kun madon x ja y akseli ja ruoan x ja y akseli ovat samassa
+  //paikassa tarkoittaa se sitä, että mato on syönyt ruoan
+  //jolloin saa 9 pistettä ja ruoka vaihtaa sijaintia
+  const onSyonytRuoan = mato[0].x === food_x && mato[0].y === food_y;
+  if(onSyonytRuoan){
+    tulos += 9;
+    document.getElementById('tulos').innerHTML = tulos;
     gen_food();
   }else{
-  snake.pop();
+  mato.pop();
 }
 }

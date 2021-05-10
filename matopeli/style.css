@@ -1,4 +1,4 @@
-#snakeboard {
+#matoMaailma {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -6,7 +6,7 @@
   margin: 5px;
 }
 
-#score {
+#tulos {
   text-align: center;
   font-size: 100px;
 }
