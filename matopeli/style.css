@@ -1,0 +1,18 @@
+#snakeboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 5px;
+}
+
+#score {
+  text-align: center;
+  font-size: 100px;
+}
+
+#gameover {
+  text-align: center;
+  font-size: 100px;
+  margin-top: 520px;
+}
