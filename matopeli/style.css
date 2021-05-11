@@ -1,3 +1,7 @@
+body {
+  background-image: url('tausta.jpg');
+}
+
 #matoMaailma {
   position: absolute;
   top: 50%;
@@ -9,10 +13,17 @@
 #tulos {
   text-align: center;
   font-size: 100px;
+  color: #F3B436;
 }
 
 #gameover {
   text-align: center;
   font-size: 100px;
   margin-top: 520px;
+  background-color: rgba(000, 000, 000, 0.9);
+  color: #00FF09;
+}
+
+canvas {
+  border: 2px solid #F4FF46;
 }
