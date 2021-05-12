@@ -1,29 +1,79 @@
 body {
   background-image: url('tausta.jpg');
+  text-align: center;
 }
+
+@font-face {
+  font-family: fontti;
+  src: url(fontti.ttf);
+}
+
+h3 {
+  font-family: fontti;
+  font-size: 28px;
+}
+
+
+.vaseninfo {
+  width: 25%;
+  font-family: tahoma;
+  position: absolute;
+  color: #F4FF46;
+  float left;
+  margin-left: 20px;
+}
+
+.oikeainfo {
+  width: 25%;
+  font-family: tahoma;
+  color: #F4FF46;
+  float: right;
+  margin-right: 20px;
+}
+
 
 #matoMaailma {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 5px;
 }
 
 #tulos {
   text-align: center;
-  font-size: 100px;
+  font-family: fontti;
+  font-size: 70px;
   color: #F3B436;
+}
+
+#nappi {
+  background-color: transparent;
+  border: transparent;
+  color: #1ac6ff;
+  font-family: fontti;
+  font-size: 30px;
+  padding: 20px;
+  margin-top: 200px;
+  position: relative;
+  z-index: 1;
+  margin-left: 28%;
+}
+
+#nappi:hover {
+  color: #ff0040;
 }
 
 #gameover {
   text-align: center;
-  font-size: 100px;
-  margin-top: 520px;
+  font-family: fontti;
+  font-size: 70px;
+  margin-top: 300px;
   background-color: rgba(000, 000, 000, 0.9);
   color: #00FF09;
 }
 
 canvas {
-  border: 2px solid #F4FF46;
+  border: 3px solid #F4FF46;
+  border-radius: 2px;
+  margin: 5px;
 }
