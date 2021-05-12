@@ -70,14 +70,18 @@ function piirraMadonOsa(madonOsa){
 // Peli loppuu..
 function peliLoppuu(){
   for (let i = 4; i < mato.length; i++){
-    if (mato[i].x === mato[0].x && mato[i].y === mato[0].y) return true //...jos
+    if (mato[i].x === mato[0].x && mato[i].y === mato[0].y){
+      document.getElementById('gameover').innerHTML = "Game over!";
+      document.getElementById('pelaauudestaan').innerHTML = '<button id="nappi" onclick="window.location.reload();">Play again!</button>';
+     return true} //...jos
   }
   const hitLeftWall = mato[0].x < 0;
   const hitRightWall = mato[0].x > matoMaailma.width - 20;
   const hitTopWall = mato[0].y < 0;
   const hitBottomWall = mato[0].y > matoMaailma.height - 20;
   if (hitLeftWall || hitRightWall || hitTopWall || hitBottomWall){ // Törmätessä seinään...
-    document.getElementById('gameover').innerHTML = "Game over!";} // ...tulee pelilaudan alapuolelle "Game over"
+    document.getElementById('gameover').innerHTML = "Game over!";
+    document.getElementById('pelaauudestaan').innerHTML = '<button id="nappi" onclick="window.location.reload();">Play again!</button>';} // ...tulee pelilaudan alapuolelle "Game over"
   return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
 }
 
