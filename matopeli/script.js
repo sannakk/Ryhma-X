@@ -28,11 +28,13 @@ teeRuoka();
 
 document.addEventListener('keydown', muutaSuuntaa);
 
+//Pelin pääfunktio joka pyörittää lähes kaikkia funktioita
+//Jotka olemme luoneet
 function peli(){
   if (peliLoppuu()) return;
   suunnanMuutos = false;
   setTimeout(function onTick() {
-  clear_board();
+  korjaa();
   piirraRuoka();
   liikuMato();
   piirraMato();
@@ -40,12 +42,16 @@ function peli(){
 }, 100)
 }
 
-function clear_board(){
+//Tämä funktio korjaa pelikentän jatkuvasti siitä mistä mato
+//on liikkunut takaisin taustanväriksi. Ilman tätä kaikki kohdat
+//mistä mato on mennyt jäisi madon värisiksi.
+function korjaa(){
   matoMaailma_ctx.fillStyle = maailmanVari;
   matoMaailma_ctx.strokestyle = maailmanReuna;
   matoMaailma_ctx.fillRect(0, 0, matoMaailma.width, matoMaailma.height);
   matoMaailma_ctx.strokeRect(0, 0, matoMaailma.width, matoMaailma.height);
 }
+
 
 function piirraMato(){
   mato.forEach(piirraMadonOsa)
@@ -63,7 +69,7 @@ function piirraRuoka(){
 function piirraMadonOsa(madonOsa){
   matoMaailma_ctx.fillStyle  = matoVari;
   matoMaailma_ctx.strokestyle = matoReuna;
-  matoMaailma_ctx.fillRect(madonOsa.x, madonOsa.y, 20, 20); //Tässä tapauksessa neliö 10 x 10
+  matoMaailma_ctx.fillRect(madonOsa.x, madonOsa.y, 20, 20); //Tässä tapauksessa neliö 20 x 20
   matoMaailma_ctx.strokeRect(madonOsa.x, madonOsa.y, 20, 20);//-||-
 }
 
@@ -100,6 +106,8 @@ function teeRuoka(){ // HAHAHA keksi tähän vaa joku muu XD kirjotin vaa jonkun
   });
 }
 
+//Määritetään, että tietokoneen näppäimistön nuolinäppäimilla
+//liikutetaan matoa
 function muutaSuuntaa(event){
   const LEFT_KEY = 37;
   const RIGHT_KEY = 39;
@@ -114,6 +122,8 @@ suunnanMuutos = true;
   const goingRight = dx === 20;
   const goingLeft = dx === -20;
 
+//Tärkeä tässä on se, että mato ei saa lähteä vastakkaiseen
+//suuntaan suoraan.
     if (keyPressed === LEFT_KEY && !goingRight){
       dx = -20;
       dy = 0;
@@ -132,6 +142,9 @@ suunnanMuutos = true;
     }
 }
 
+//unshiftilla luodaan madolle tavallaan jatkuvasti uusi pää
+//edellisen eteen. Ja perä poistuu ELLEI mato syö ruokaa jolloin sen yhden
+//liikkeen aikana madon perä ei poistu eli mato kasvaa.
 function liikuMato() {
   const paa = {x: mato[0].x + dx, y: mato[0].y + dy};
   mato.unshift(paa);
