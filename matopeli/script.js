@@ -3,7 +3,8 @@ const maailmanReuna='yellow';
 const maailmanVari='black';
 const matoVari= '#F4FF46';
 const matoReuna='green';
-
+//Kun peli alkaa hiiren kursori katoaa näkyvistä
+document.body.style.cursor = "none";
 //Luodaan mato haluttuun sijaintiin pelialustalla mistä,
 //se lähtee myös liikkeelle
 let mato = [{x: 200, y: 200}, {x: 180, y: 200}, {x: 160, y: 200}, {x: 140, y: 200}, {x: 120, y: 200},];
@@ -52,7 +53,7 @@ function korjaa(){
   matoMaailma_ctx.strokeRect(0, 0, matoMaailma.width, matoMaailma.height);
 }
 
-
+//Piirtää madon canvasille
 function piirraMato(){
   mato.forEach(piirraMadonOsa)
 }
@@ -73,11 +74,14 @@ function piirraMadonOsa(madonOsa){
   matoMaailma_ctx.strokeRect(madonOsa.x, madonOsa.y, 20, 20);//-||-
 }
 
-// Peli loppuu..
+// Peli loppuu kun mato osuu joko itseensä tai johonkin seinään
+// eli joko yläseinään, alaseinään, oikeaan seinään tai vasempaan seinään
 function peliLoppuu(){
   for (let i = 4; i < mato.length; i++){
     if (mato[i].x === mato[0].x && mato[i].y === mato[0].y){
       document.getElementById('gameover').innerHTML = "Game over!";
+      //Kun häviää pelin hiiren kursori tulee taas näkyviin
+      document.body.style.cursor = "default";
       document.getElementById('pelaauudestaan').innerHTML = '<button id="nappi" onclick="window.location.reload();">Play again!</button>';
      return true} //...jos
   }
@@ -87,8 +91,10 @@ function peliLoppuu(){
   const hitBottomWall = mato[0].y > matoMaailma.height - 20;
   if (hitLeftWall || hitRightWall || hitTopWall || hitBottomWall){ // Törmätessä seinään...
     document.getElementById('gameover').innerHTML = "Game over!";
+    document.body.style.cursor = "default";
     document.getElementById('pelaauudestaan').innerHTML = '<button id="nappi" onclick="window.location.reload();">Play again!</button>';} // ...tulee pelilaudan alapuolelle "Game over"
   return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
+
 }
 
 //Arpoo random sijainnin ruualle
@@ -96,6 +102,8 @@ function ruuanSijainti(min, max){
   return Math.round((Math.random() * (max-min) + min) / 20) * 20;
 }
 
+//Ruoan sijainnin lisäksi pitää luoda ruoalle myös koko ja määrittää
+//että se ilmestyy myös uudestaan kun se on syöty
 function teeRuoka(){ // HAHAHA keksi tähän vaa joku muu XD kirjotin vaa jonkun
   ruokaX = ruuanSijainti(0, matoMaailma.width - 20);
   ruokaY = ruuanSijainti(0, matoMaailma.height - 20);

@@ -61,6 +61,7 @@ h3 {
 
 #nappi:hover {
   color: #ff0040;
+  cursor: pointer;
 }
 
 #gameover {
