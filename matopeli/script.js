@@ -11,6 +11,7 @@ let mato = [{x: 200, y: 200}, {x: 180, y: 200}, {x: 160, y: 200}, {x: 140, y: 20
 
 
 let tulos = 0;
+//let paras = 0;
 let suunnanMuutos = false;
 let ruokaX;
 let ruokaY;
@@ -39,6 +40,8 @@ function peli(){
   piirraRuoka();
   liikuMato();
   piirraMato();
+  //tulokset();
+  //hae();
   peli();
 }, 100)
 }
@@ -73,6 +76,27 @@ function piirraMadonOsa(madonOsa){
   matoMaailma_ctx.fillRect(madonOsa.x, madonOsa.y, 20, 20); //Tässä tapauksessa neliö 20 x 20
   matoMaailma_ctx.strokeRect(madonOsa.x, madonOsa.y, 20, 20);//-||-
 }
+/*
+function tulokset() {
+
+const nykyTulos =  document.getElementById("tulos").value;
+const parasTulos = document.getElementById("paras").value;
+
+if(nykyTulos > parasTulos && parasTulos !== null) {
+localStorage.setItem("tulos", nykyTulos);
+hae();
+} else {
+  localStorage.setItem("tulos", nykyTulos);
+  hae();
+}
+}
+
+function hae() {
+
+  const parasTulos = localStorage.getItem("tulos");
+  document.getElementById("paras").innerHTML = parasTulos;
+  console.log(parasTulos);
+}*/
 
 // Peli loppuu kun mato osuu joko itseensä tai johonkin seinään
 // eli joko yläseinään, alaseinään, oikeaan seinään tai vasempaan seinään
