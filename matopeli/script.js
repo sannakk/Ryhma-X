@@ -10,8 +10,8 @@ document.body.style.cursor = "none";
 let mato = [{x: 200, y: 200}, {x: 180, y: 200}, {x: 160, y: 200}, {x: 140, y: 200}, {x: 120, y: 200},];
 
 
+let paras = 0;
 let tulos = 0;
-//let paras = 0;
 let suunnanMuutos = false;
 let ruokaX;
 let ruokaY;
@@ -34,14 +34,13 @@ document.addEventListener('keydown', muutaSuuntaa);
 //Jotka olemme luoneet
 function peli(){
   if (peliLoppuu()) return;
+  hae();
   suunnanMuutos = false;
   setTimeout(function onTick() {
   korjaa();
   piirraRuoka();
   liikuMato();
   piirraMato();
-  //tulokset();
-  //hae();
   peli();
 }, 100)
 }
@@ -76,27 +75,7 @@ function piirraMadonOsa(madonOsa){
   matoMaailma_ctx.fillRect(madonOsa.x, madonOsa.y, 20, 20); //Tässä tapauksessa neliö 20 x 20
   matoMaailma_ctx.strokeRect(madonOsa.x, madonOsa.y, 20, 20);//-||-
 }
-/*
-function tulokset() {
 
-const nykyTulos =  document.getElementById("tulos").value;
-const parasTulos = document.getElementById("paras").value;
-
-if(nykyTulos > parasTulos && parasTulos !== null) {
-localStorage.setItem("tulos", nykyTulos);
-hae();
-} else {
-  localStorage.setItem("tulos", nykyTulos);
-  hae();
-}
-}
-
-function hae() {
-
-  const parasTulos = localStorage.getItem("tulos");
-  document.getElementById("paras").innerHTML = parasTulos;
-  console.log(parasTulos);
-}*/
 
 // Peli loppuu kun mato osuu joko itseensä tai johonkin seinään
 // eli joko yläseinään, alaseinään, oikeaan seinään tai vasempaan seinään
@@ -128,7 +107,7 @@ function ruuanSijainti(min, max){
 
 //Ruoan sijainnin lisäksi pitää luoda ruoalle myös koko ja määrittää
 //että se ilmestyy myös uudestaan kun se on syöty
-function teeRuoka(){ 
+function teeRuoka(){
   ruokaX = ruuanSijainti(0, matoMaailma.width - 20);
   ruokaY = ruuanSijainti(0, matoMaailma.height - 20);
   mato.forEach(function onkoMatoSyonyt(part){
@@ -186,9 +165,28 @@ function liikuMato() {
   const onSyonytRuoan = mato[0].x === ruokaX && mato[0].y === ruokaY;
   if(onSyonytRuoan){
     tulos += 9;
+    console.log(paras);
     document.getElementById('tulos').innerHTML = tulos;
+     if(tulos > paras) {
+      document.getElementById("paras").innerHTML = tulos;
+      paras += 9;
+      localStorage.setItem("paras", tulos);
+      hae();
+    } if(paras > tulos) {
+      document.getElementById("paras").innerHTML = paras;
+      paras += 9;
+      localStorage.setItem("paras", paras);
+      hae();
+    }
     teeRuoka();
   }else{
   mato.pop();
 }
+}
+
+function hae() {
+
+  const parasTulos = localStorage.getItem("paras");
+  document.getElementById("paras").innerHTML = parasTulos;
+  console.log(parasTulos);
 }
