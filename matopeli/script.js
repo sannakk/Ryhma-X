@@ -128,7 +128,7 @@ function ruuanSijainti(min, max){
 
 //Ruoan sijainnin lisäksi pitää luoda ruoalle myös koko ja määrittää
 //että se ilmestyy myös uudestaan kun se on syöty
-function teeRuoka(){ // HAHAHA keksi tähän vaa joku muu XD kirjotin vaa jonkun
+function teeRuoka(){ 
   ruokaX = ruuanSijainti(0, matoMaailma.width - 20);
   ruokaY = ruuanSijainti(0, matoMaailma.height - 20);
   mato.forEach(function onkoMatoSyonyt(part){
