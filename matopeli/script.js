@@ -167,10 +167,10 @@ function liikuMato() {
     tulos += 9;
     console.log(paras);
     document.getElementById('tulos').innerHTML = tulos;
-     if(tulos > paras) {
+     if(tulos > localStorage.getItem("paras")) {
+      localStorage.setItem("paras", tulos);
       document.getElementById("paras").innerHTML = tulos;
       paras += 9;
-      localStorage.setItem("paras", tulos);
       hae();
     } if(paras > tulos) {
       document.getElementById("paras").innerHTML = paras;
