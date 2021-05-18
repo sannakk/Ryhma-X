@@ -68,6 +68,17 @@ function piirraRuoka(){
 //  matoMaailma_ctx.strokeRect(ruokaX, ruokaY, 20, 20); //Neliö 10 x 10
 }
 
+
+////TÄÄ OIS SE YMPYRÄN MUOTONEN RUOKA ALKU
+
+/*function piirraRuoka(){
+  matoMaailma_ctx.fillStyle ='purple'; //Väri
+//  matoMaailma_ctx.strokestyle = 'red';
+  matoMaailma_ctx.arc(ruokaX, ruokaY, 10, 0, 2 * Math.PI); //Ruuan muoto ja mitat
+  matoMaailma_ctx.fill();*/
+
+
+
 //Luo pelilaudalle "madonOsa":an määritetyt muodot ja mitat
 function piirraMadonOsa(madonOsa){
   matoMaailma_ctx.fillStyle  = matoVari;
