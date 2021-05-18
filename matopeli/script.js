@@ -75,7 +75,12 @@ function piirraRuoka(){
   matoMaailma_ctx.fillStyle ='purple'; //Väri
 //  matoMaailma_ctx.strokestyle = 'red';
   matoMaailma_ctx.arc(ruokaX, ruokaY, 10, 0, 2 * Math.PI); //Ruuan muoto ja mitat
-  matoMaailma_ctx.fill();*/
+  matoMaailma_ctx.fill();
+}*/
+
+
+
+
 
 
 
